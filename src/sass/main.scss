@@ -1,0 +1,27 @@
+
+// Configuration and helpers
+@import
+    'abstracts/variables',
+    'abstracts/mixins';
+
+// Base stuff
+@import
+    'base/reset',
+    'base/base', 
+    'base/typography';
+    
+// Components
+@import
+    'components/buttons';
+    
+// Layout-related sections
+@import
+    'layout/header',
+    'layout/footer';
+
+// Page-specific styles
+@import
+    'pages/home';
+
+
+

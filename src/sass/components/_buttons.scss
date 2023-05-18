@@ -1,0 +1,20 @@
+
+// style button
+        
+@mixin button($width) {
+    padding: 15px 0;
+    width: $width;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 30px;
+    color: white;
+    border: none;
+    background: linear-gradient($color-secondary, $color-primary);
+    box-shadow: $button-shadow;
+    transition: opacity 250ms, box-shadow 250ms;
+
+    @include hover-light-text(0.45) {
+        opacity: 0.93;
+        box-shadow: $button-shadow-hover;
+    };
+}

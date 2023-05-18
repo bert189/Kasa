@@ -1,0 +1,50 @@
+.footer {
+    color: white;
+    background-color: $dark-grey;
+
+    & .container {
+        padding: 25px;
+    
+        @include tablet {
+            display: flex;
+            padding: 40px 35px 55px;
+        }
+    }
+
+    &__logo {
+        font-size: 18px;
+        transition: text-shadow 200ms;
+        @include tablet {
+            width: 20%;
+        }
+
+        @include hover-light-text(0.35);
+    }
+
+    &__liste {
+        padding: 20px 0 10px;
+
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 80px;
+            padding: 0 50px;
+        }
+    }
+
+    & li {
+        padding: 5px 0;
+        transition: text-shadow 200ms;
+
+        @include hover-light-text(0.35);
+
+        @include tablet {
+            width: 270px;
+        }
+    }
+
+    & .fa-handshake-angle {
+        font-size: 11px;
+    }
+}
