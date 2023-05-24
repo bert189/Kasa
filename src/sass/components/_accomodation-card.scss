@@ -1,0 +1,55 @@
+
+.accomodation-card {
+    border-radius: $card-radius;
+    width: calc((100% - (3 * $card-space)) / 3);
+    position: relative;
+    margin: 0 $card-space $card-space 0;
+    transition: opacity $duration;
+    overflow: hidden;
+
+    @include hover {
+        opacity: 0.9;
+    }
+    
+    & a {
+        height: max-content;
+    }
+    
+    & img {
+        height: 340px;
+        border-radius: 10px;
+        vertical-align: bottom;
+        object-fit: cover;
+        overflow-clip-margin: unset;
+        transition: transform $duration ease;
+    }
+    
+    &:hover img {
+        transform: scale(1.01);
+    }
+
+    & h2 {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        color: white;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
+        padding: 20px;
+        border-radius: $card-radius;
+        height: 35%;
+        width: calc(100% - (2 * 20px));
+        display: flex;
+        align-items: flex-end;
+        transition: text-shadow $duration;
+    }
+
+    &:hover h2 {
+        text-shadow: 0px 0px 6px rgba(255,255,255,0.6); 
+    }
+
+    @include desktop {
+        width: calc((100% - (2 * $card-space)) / 2);
+    }
+
+
+}

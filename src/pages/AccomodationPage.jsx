@@ -3,7 +3,7 @@ import { fetchAllAccomodations } from "../api/api";
 import { useLocation } from 'react-router-dom';
 
 
-
+import Header from "../components/Header";
 
 
 
@@ -24,14 +24,13 @@ function AccomodationPage() {
             })
             .catch(err => {
                 // Gérez les erreurs ici
-                console.log(err);
             });
     }, [])
-
-    // console.log(accomodation)
+    
 
     return (
         <>
+            <Header />  
             <div>fiche logement</div>
 
             <img src={accomodation.cover} alt="" />

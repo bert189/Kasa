@@ -1,8 +1,12 @@
 import React from "react";
+import Header from "../components/Header";
 
 function NotFound() {
     return (
-        <div>404</div> 
+        <>
+            <Header />
+            <div>404</div>
+        </>
     );
 }
 

@@ -1,15 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Home from './pages/Home';
-import Accomodation from './pages/AccomodationPage';
+import HomePage from './pages/HomePage';
+import AccomodationPage from './pages/AccomodationPage';
 import NotFound from './pages/NotFound';
-import About from './pages/About';
+import AboutPage from './pages/AboutPage';
 
 
 const Router = createBrowserRouter([
     {
         path: "/",
-        element: <Home />, 
+        element: <HomePage />, 
         errorElement: <NotFound />,
         // children: [ // /!\ nested routes children ne fonctionnent pas...
         //     {
@@ -24,11 +24,11 @@ const Router = createBrowserRouter([
     },            
     {
         path: "/a-propos",
-        element: <About />
+        element: <AboutPage />
     },
     {
         path: "/fiche-logement/:idLogement",
-        element: <Accomodation />
+        element: <AccomodationPage />
     }
 
 

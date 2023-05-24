@@ -1,12 +1,14 @@
+
 a {
     all: unset;
 }
 
-img {
-    object-fit: cover;
-}
+.App {
+    padding: 0 40px;
+} 
 
 .container {
-    max-width: 1600px;
+    max-width: 1240px;
     margin: 0 auto;
+
 }

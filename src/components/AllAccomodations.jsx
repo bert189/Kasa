@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import AccomodationCard from './AccomodationCard';
 import { fetchAllAccomodations } from "../api/api";
-import { NavLink } from "react-router-dom";
+
 
 
 function AllAccomodations() {
@@ -16,18 +16,19 @@ function AllAccomodations() {
             })
             .catch(err => {
                 // Gérez les erreurs ici
-                console.log(err);
             });
     }, [])
         
     
     return (
-        <div>
-            {accomodations.map((accomodation => (
-                <NavLink key={"link-to"+accomodation.id} to={"/fiche-logement/"+accomodation.id} end>
-                    <AccomodationCard key={accomodation.id} image={accomodation.cover} title={accomodation.title} />
-                </NavLink>
-            )))}
+        <div className="all-accomodation container">
+            {accomodations.map(accomodation => (
+                <AccomodationCard
+                    key={accomodation.id}
+                    id={accomodation.id}
+                    image={accomodation.cover}
+                    title={accomodation.title} />
+            ))}
 
         </div>
     );

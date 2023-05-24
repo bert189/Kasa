@@ -1,100 +1,30 @@
 // colors
 
-$color-primary: #9356DC;
-$color-secondary: #FF79DA;
-$color-tertiary: #99E2D0;
-
-$ultralight-grey: rgb(243,243,243);
-$light-grey:rgb(232,232,232);
-$mid-grey: rgb(128,128,128);
-$dark-grey:rgb(60,60,60);
-
-
-// box-shadow
-
-$button-shadow: rgba(0, 0, 0, 0.14) 0px 3px 10px, rgba(0, 0, 0, 0.20) 0px 3px 10px;
-$button-shadow-hover: rgba(0, 0, 0, 0.16) 0px 4px 12px, rgba(0, 0, 0, 0.23) 0px 4px 12px;
-$step-shadow: 0px 5px 10px 0px rgba(0,0,0,0.15);
-$step-shadow-hover: 1px 6px 12px 1px rgba(0,0,0,0.17);
-
-$card-shadow: 0px 5px 10px 0px rgba(0,0,0,0.1);
-$card-shadow-hover: 1px 6px 12px 1px rgba(0,0,0,0.12);
+$color-primary: #FF6060;
+$lightgrey: #F6F6F6;
 
 
 // border-radius
 
-$card-radius: 15px;
-$menu-radius: 40px;
-
-
-// hauteur logo
-
-$logo-height: 62px;
-$logo-height-grow: 20px;
+$section-radius: 25px;
+$card-radius: 10px;
 
 
 // margins
 
-$card-text-margin: (
-    "top": 0,
-    "right": 20px,
-    "bottom": 4px,
-    "left": 15px
-);
-
-// retrait + espace choix
-
-$choices-overflow: 5px;
-$choices-space: 15px;
+$card-space: 55px;
 
 
-// ajout de padding fontionnement + restaurants wide-screen
+// transitions
 
-$home-section-padding-grow: 15px;
-$restaurants-padding-grow: 5px;
-
-
-// ajout de padding menu tablet + desktop
-
-$menu-padding-grow: 10px;
+$duration: 80ms;
 
 
 // breakpoints
 
 $breakpoints: (
-    "tablet": 768px,
-    "tablet-landscape": 992px,
-    "desktop": 1080px,
-    "wide-screen": 1280px
+    "desktop": 1199px,
+    "tablet": 991px,
+    "smartphone": 767px,
+    "phone-portrait": 575px
 );
-
-// espaces steps
-
-$steps-space: 35px;
-
-// espace restaurants
-
-$home-section-space: 20px;
-
-// heart width
-
-$heart-width: 55px;
-
-// circle check width
-
-$circle-check-width: 70px;
-
-
-// ANIMATION MENU PROGRESSIF
-
-// nombre maximal de choix pour entrées/plats/desserts
-
-$max-choices: 5;
-
-// durée d'apparition choix
-
-$choice-fade-in-duration: 1000ms;
-
-// décalage apparition choix
-
-$choice-delay: 200ms;

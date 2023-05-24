@@ -1,0 +1,31 @@
+
+
+.banner {
+    position: relative;
+
+    & img {
+        border-radius: $section-radius;
+        height: 225px;
+        width: 100%;
+        object-fit: cover;
+        overflow-clip-margin: unset;
+        vertical-align: bottom;
+    }
+
+    & h1 {
+        color: white;
+        font-size: 48px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        border-radius: 25px;
+        text-align: center;
+        padding: 0 90px;
+        @include center-content;
+    }
+}

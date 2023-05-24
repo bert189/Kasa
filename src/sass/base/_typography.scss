@@ -1,17 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
 }
 
-.logo, .big-title {
-    font-family: 'Shrikhand', cursive;
-}
 
-.medium-title {
-    @include medium-title;
-}
 
