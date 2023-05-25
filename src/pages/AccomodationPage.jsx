@@ -30,11 +30,12 @@ function AccomodationPage() {
 
     return (
         <>
-            <Header />  
-            <div>fiche logement</div>
+            <Header />
+            <main className="container">
+                <img src={accomodation.cover} alt="" />
+                <h1>{accomodation.title}</h1>
+            </main>
 
-            <img src={accomodation.cover} alt="" />
-            <h1>{accomodation.title}</h1>
 
         </>
 

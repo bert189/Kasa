@@ -5,6 +5,7 @@ a {
 
 .App {
     padding: 0 40px;
+    min-height: calc(100vh - ($footer-height + $footer-margin-top));
 } 
 
 .container {

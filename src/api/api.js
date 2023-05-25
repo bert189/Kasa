@@ -12,6 +12,16 @@ export async function fetchAllAccomodations() {
     }
 }
 
+export async function fetchAbouts() {
+    try {
+        const response = await fetch(process.env.PUBLIC_URL + '/data/abouts.json');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Erreur lors de la récupération des données :', error);
+        return null;
+    }
+}
 
 
 

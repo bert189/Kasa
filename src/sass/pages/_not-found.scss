@@ -1,0 +1,32 @@
+
+.not-found {
+    
+    & h1 {
+        color: $color-primary;
+        font-weight: 700;
+        font-size: 290px;
+        @include center-content;
+        margin: 30px 0; 
+
+    }
+
+    & h2 {
+        color: $color-primary;
+        font-size: 36px;
+        @include center-content;
+        font-weight: 500;
+        margin-bottom: 180px; 
+    }
+    
+    & .back-home {
+        color: $color-primary;
+        font-size: 18px;
+        text-decoration: underline;
+        @include center-content;
+        @include hover {
+            opacity: 0.80;
+            text-shadow: 0px 0px 6px rgba(255,96,96,0.2); 
+        }    
+    }
+
+}

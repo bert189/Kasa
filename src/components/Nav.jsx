@@ -6,8 +6,12 @@ function Nav({links}) {
         <nav className="nav">
             <ul>
                 {links.map((link, index) => (
-                    <li key={index} class="link">
-                        <NavLink to={link.url} activeClassName="active">{link.text}</NavLink>
+                    <li key={index} className="link">
+                        <NavLink
+                            to={link.url}
+                            className={({ isActive }) => isActive ? "active" : ""}>
+                                {link.text}
+                        </NavLink>
                     </li>
                 ))}
             </ul>
