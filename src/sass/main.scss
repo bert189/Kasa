@@ -16,8 +16,11 @@
     'components/banner',
     'components/dropdown',
     'components/all-accomodations',
-    'components/accomodation-card';
-
+    'components/accomodation-card',
+    'components/carrousel',
+    'components/tags',
+    'components/host',
+    'components/rating';
     
 // Layout-related sections
 @import
@@ -28,7 +31,9 @@
 @import
     'pages/home',
     'pages/about',
-    'pages/not-found';
+    'pages/not-found',
+    'pages/accomodation';
+
 
 
 

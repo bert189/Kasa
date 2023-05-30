@@ -29,7 +29,7 @@ function AboutPage() {
             <Banner image={valley} title=" "/>
             <main className="abouts">
                 {abouts.map((about, index) => (
-                    <Dropdown key={index} title={about.title} text={about.text} />
+                    <Dropdown key={index} title={about.title} content={about.content} />
                 ))}
             </main>
            

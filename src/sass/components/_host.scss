@@ -1,0 +1,25 @@
+
+.host {
+    display: flex;
+    align-items: center;
+    
+    & .name {
+        color: $color-primary;
+        font-size: 18px;
+        font-weight: 500;
+        margin-right: 12px;
+
+        & p {
+            text-align: right;
+        }
+    }
+
+    & img {
+        height: 64px;
+        width: 64px;
+        object-fit: cover;
+        overflow-clip-margin: unset;
+        border-radius: 50%;
+    }
+}
+

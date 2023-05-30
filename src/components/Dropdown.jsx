@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
 
-function Dropdown({title, text}) {
+function Dropdown({title, content}) {
     
     const [open, setOpen] = useState(false);
     
@@ -22,7 +22,7 @@ function Dropdown({title, text}) {
                 {!open ? chevronDown : chevronUp}
             </div>
             {open && <div> 
-                <p>{text}</p>
+                <div className="dropdown__content">{content}</div>
             </div>}
         </div>
     )

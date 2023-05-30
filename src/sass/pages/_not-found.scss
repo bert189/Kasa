@@ -6,8 +6,7 @@
         font-weight: 700;
         font-size: 290px;
         @include center-content;
-        margin: 30px 0; 
-
+        // margin: 30px 0;
     }
 
     & h2 {
@@ -15,7 +14,7 @@
         font-size: 36px;
         @include center-content;
         font-weight: 500;
-        margin-bottom: 180px; 
+        margin-bottom: 110px; 
     }
     
     & .back-home {

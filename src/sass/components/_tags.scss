@@ -1,0 +1,20 @@
+
+.tags {
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    
+    & .tag {
+        background-color: $color-primary;
+        color: white;
+        border-radius: $card-radius;
+        padding: 5px 10px;
+        margin-right: 10px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+} 
