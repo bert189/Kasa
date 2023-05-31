@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchAllAccomodations } from "../api/api";
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 import Header from "../components/Header";
 import Carrousel from "../components/Carrousel";
@@ -15,75 +15,65 @@ function AccomodationPage() {
 
     const currentLocation = useParams();
     const idAccomodation = currentLocation.idLogement;
+    const navigate = useNavigate();
 
-    const [accomodation, setAccomodation] = useState(null);
-    const [idExist, setIdExist] = useState(false); 
-
-    useEffect(() => {
-        fetchAllAccomodations()
-            .then((result) => {
-                setAccomodation((result.find(item => item.id === idAccomodation)));
-                if (accomodation.id) {
-                    setIdExist(true)
-                }           
-                // setIdExist(result.some(item => item.id === idAccomodation));               
-            })
-            .catch(err => {
-                setIdExist(false)
-            });
-    }, [idExist])      
-
-
-
-    // opérateur de validation de chaînage optionnel (?.) + initial state = null
-    // évite accomodation undefined le temps de la résolution de l'appel api asynchrone
-    const pictures = accomodation?.pictures || [] ;
-    const title = accomodation?.title || [] ;
-    const location = accomodation?.location || [] ;
-    const host = accomodation?.host || [] ;
-    const tags = accomodation?.tags || [] ;
-    const rating = accomodation?.rating || [] ;
-    const description = accomodation?.description || [] ;
-    const equipments = accomodation?.equipments || [] ;
-
-    const fullName = host.name || '';
-    const [firstName, lastName] = fullName.split(" ");
-
-    console.log(idExist)
+    const [accomodation, setAccomodation] = useState();
     
-    if (!idExist) {
-        // redirection vers page 404
-        return <Navigate to="/logement-introuvable/"></Navigate>;
+    useEffect(() => {
+        async function load() {
+            try {
+                const allAccomodations = await fetchAllAccomodations();
+                const acc = allAccomodations.find((item) => item.id === idAccomodation);
+                if (acc) {
+                    setAccomodation(acc);
+                }
+                else {
+                    navigate("/logement-introuvable");
+                }
+            }
+            catch(err) {
+                // Gérez les erreurs ici
+            }
+        }
+        load();
+    }, )
+
+
+
+    if(accomodation) {
+        const {pictures, title, location, host, tags, rating, description, equipments} = accomodation;
+        const fullName = host.name;
+        const [firstName, lastName] = fullName.split(" ");
+
+        return (
+            <>
+                <Header />
+                <main className="accomodation container">
+                    <Carrousel pictures={pictures} />
+                    <div className="infos-wrapper">
+                        <section className="accomodation__infos infos-1">
+                            <h1>{title}</h1>
+                            <h3>{location}</h3>
+                            <Tags tags={tags} />
+                        </section>
+                        <section className="accomodation__infos infos-2">
+                            <Host firstName={firstName} lastName={lastName} picture={host.picture} />
+                            <Rating rating={rating} />
+                        </section>
+                    </div>
+                    <section className="accomodation__details">
+                        <Dropdown key="0" title="Description" content={description} />
+                        <Dropdown key="1" title="Équipements" content={<ul>{equipments.map((equipment, index) => <li key={index}>{equipment}</li>)}</ul>} />
+                    </section>
+                </main>
+            </>
+        );
     }
-
-    return (
-        <>
-            <Header />
-            <main className="accomodation container">
-                <Carrousel pictures={pictures} />
-                <div className="infos-wrapper">
-                    <section className="accomodation__infos infos-1">
-                        <h1>{title}</h1>
-                        <h3>{location}</h3>
-                        <Tags tags={tags} />
-                    </section>
-                    <section className="accomodation__infos infos-2">    
-                        <Host firstName={firstName} lastName={lastName} picture={host.picture} />     
-                        <Rating rating={rating} />
-                    </section>
-                </div>
-                <section className="accomodation__details">
-                    <Dropdown key="0" title="Description" content={description} />
-                    <Dropdown key="1" title="Équipements" content={<ul>{equipments.map((equipment, index) => <li key={index}>{equipment}</li>)}</ul>} />
-                </section>
-
-            </main>
-
-
-        </>
-
-    );
-
+    // else {
+    //     return (
+    //         <LoadingSpinner />
+    //     )
+    // }
 }
 
 export default AccomodationPage;
