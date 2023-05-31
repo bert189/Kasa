@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchAllAccomodations } from "../api/api";
-import { useLocation } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 
 import Header from "../components/Header";
 import Carrousel from "../components/Carrousel";
@@ -13,23 +13,27 @@ import Dropdown from "../components/Dropdown";
 
 function AccomodationPage() {
 
-    const currentLocation = useLocation();
-    const pathname = currentLocation.pathname;
-    const segments = pathname.split('/');
-    const idAccomodation = segments[segments.length - 1];
-
+    const currentLocation = useParams();
+    const idAccomodation = currentLocation.idLogement;
 
     const [accomodation, setAccomodation] = useState(null);
-    
+    const [idExist, setIdExist] = useState(false); 
+
     useEffect(() => {
         fetchAllAccomodations()
-            .then(result => {
-                setAccomodation((result.filter(item => item.id === idAccomodation))[0]);
+            .then((result) => {
+                setAccomodation((result.find(item => item.id === idAccomodation)));
+                if (accomodation.id) {
+                    setIdExist(true)
+                }           
+                // setIdExist(result.some(item => item.id === idAccomodation));               
             })
             .catch(err => {
-                // Gérez les erreurs ici
+                setIdExist(false)
             });
-    }, [])
+    }, [idExist])      
+
+
 
     // opérateur de validation de chaînage optionnel (?.) + initial state = null
     // évite accomodation undefined le temps de la résolution de l'appel api asynchrone
@@ -44,7 +48,13 @@ function AccomodationPage() {
 
     const fullName = host.name || '';
     const [firstName, lastName] = fullName.split(" ");
+
+    console.log(idExist)
     
+    if (!idExist) {
+        // redirection vers page 404
+        return <Navigate to="/logement-introuvable/"></Navigate>;
+    }
 
     return (
         <>
