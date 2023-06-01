@@ -3,12 +3,20 @@
     height: 415px;
     position: relative;
 
+    @include smartphone {
+        height: 260px;
+    }
+
     & img {
         object-fit: cover;
         overflow-clip-margin: unset;
         width: 100%;
         height: 100%;
         border-radius: $section-radius;
+
+        @include smartphone {
+            border-radius: $card-radius;
+        }
     }
 
     & .chevron {
@@ -22,13 +30,29 @@
         @include hover {
             filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.5));
         }
+
+        @include smartphone {
+            font-size: 40px;
+        }
+
+        @include phone-portrait {
+            font-size: 25px;
+        }
     }
 
     & .chevron-left {
         left: $carrousel-chevron-offset;
+        
+        @include phone-portrait {
+            left: $carrousel-chevron-offset-phone;
+        }
     }
     & .chevron-right {
         right: $carrousel-chevron-offset;
+        
+        @include phone-portrait {
+            right: $carrousel-chevron-offset-phone;
+        }
     }
 
     &__page-indicator {
@@ -39,6 +63,10 @@
         color: white;
         font-size: 18px;
         font-weight: 500;
+
+        @include smartphone {
+            display: none;
+        }
     }
 
 }

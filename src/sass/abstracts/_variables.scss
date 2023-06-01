@@ -1,7 +1,14 @@
 // dims
 
 $footer-height: 220px;
+$footer-height-smartphone: 140px;
 $footer-margin-top: 60px;
+$footer-margin-top-tablet: 20px;
+$footer-margin-top-smartphone: 5px;
+
+$star-size: 24px;
+$star-size-phone: 17px;
+
 
 // colors
 
@@ -21,7 +28,11 @@ $dropdown-radius: 5px;
 // margins
 
 $card-space: 55px;
+$card-space-desktop: 40px;
+$card-space-tactile: 20px;
+
 $carrousel-chevron-offset: 25px;
+$carrousel-chevron-offset-phone: 15px;
 
 
 // transitions
@@ -32,7 +43,7 @@ $duration: 80ms;
 // breakpoints
 
 $breakpoints: (
-    "desktop": 1199px,
+    "desktop": 1239px,
     "tablet": 991px,
     "smartphone": 767px,
     "phone-portrait": 575px

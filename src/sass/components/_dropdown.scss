@@ -5,6 +5,11 @@
     border-radius: $dropdown-radius;
     margin-bottom: 30px;
 
+    @include smartphone {
+        font-size: 14px;
+        margin-bottom: $card-space-tactile;
+    }
+
     &__title-wrapper {
         background-color: $color-primary;
         color: white;
@@ -17,9 +22,18 @@
         @include hover-light-text(0.3) {
             opacity: 0.95;
         }
+
+        @include smartphone {
+            padding: 10px 12px;
+        }
         
         & .chevron {
             transition: filter $duration;
+            font-size: 28px;
+
+            @include smartphone {
+                font-size: 18px;
+            }
         }
         
         &:hover .chevron {
@@ -41,6 +55,12 @@
         padding: 45px 20px 20px 30px;
         z-index: -10;
         line-height: 35px;
+
+        @include smartphone {
+            line-height: normal;
+            padding: 20px 12px 10px;
+            margin-bottom: calc(0px - $card-radius);
+        }
 
     }
 }

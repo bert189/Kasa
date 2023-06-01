@@ -10,12 +10,14 @@ import AllAccomodations from "../components/AllAccomodations";
 
 function Home() {
 
-    const title = "Chez vous, partout et ailleurs"
+    const titleFirst = "Chez vous,";
+    const titleSecond = "partout et ailleurs";
+    const alt = "cote sauvage";
 
     return (
         <>
             <Header />
-            <Banner image={coast} title={title}/>
+            <Banner image={coast} titleFirst={titleFirst} titleSecond={titleSecond} alt={alt}/>
             <AllAccomodations />
             {/* <Footer />        */}
         </>

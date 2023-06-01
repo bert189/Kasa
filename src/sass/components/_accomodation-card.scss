@@ -1,5 +1,6 @@
 
 .accomodation-card {
+    height: 340px;
     border-radius: $card-radius;
     width: calc((100% - (3 * $card-space)) / 3);
     position: relative;
@@ -7,6 +8,25 @@
     transition: opacity $duration;
     overflow: hidden;
 
+    @include desktop {
+        width: calc((100% - (2 * $card-space-desktop)) / 2);
+        margin: 0 $card-space-desktop $card-space-desktop 0;
+    }
+
+    @include tablet {
+        width: calc((100% - $card-space-tactile) / 2);
+        margin: 0 0 $card-space-tactile;
+    }
+    
+    @include smartphone {
+        height: 260px;
+    }
+
+    @include phone-portrait {
+        width: 100%;
+        margin: 0 0 $card-space-tactile;
+    }
+    
     @include hover {
         opacity: 0.9;
     }
@@ -17,11 +37,17 @@
     
     & img {
         height: 340px;
+        min-width: 100%;
         border-radius: 10px;
         vertical-align: bottom;
         object-fit: cover;
         overflow-clip-margin: unset;
         transition: transform $duration ease;
+            
+        @include smartphone {
+            height: 260px;
+        }
+
     }
     
     &:hover img {
@@ -41,14 +67,11 @@
         display: flex;
         align-items: flex-end;
         transition: text-shadow $duration;
+
     }
 
     &:hover h2 {
         text-shadow: 0px 0px 6px rgba(255,255,255,0.6); 
-    }
-
-    @include desktop {
-        width: calc((100% - (2 * $card-space)) / 2);
     }
 
 

@@ -4,15 +4,34 @@
     align-items: center;
     padding: 40px 0 45px;
 
+    @include tablet {
+        padding: 20px 0 25px;
+    }
+
+    @include smartphone {
+        padding: 20px 0 15px;
+    }
+
     &__logo {
         width: 220px;
         height: 70px;
         transition: opacity $duration;
 
+        @include smartphone {
+            width: 150px;
+            height: 50px;
+        }
+
         @include hover {
             opacity: 0.85;
-        }    
+        } 
 
+    }
+
+    & .nav {
+        @include phone-portrait {
+            max-width: calc(100% - 150px);
+        }
     }
 
 

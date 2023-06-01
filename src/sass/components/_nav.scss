@@ -4,8 +4,20 @@
     font-size: 24px;
     font-weight: 500;
 
+    @include tablet {
+        text-transform: uppercase;
+    }
+    @include smartphone {
+        font-size: 18px;
+    }
+    @include phone-portrait {
+        font-size: 14px;
+    }
+
     & ul {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
     }
 
     & .link {
@@ -14,12 +26,22 @@
         @include hover {
             opacity: 0.75;
             text-shadow: 0px 0px 6px rgba(255,96,96,0.2); 
-        }        
+        }
+        
+        @include phone-portrait {
+            margin-left: 15px;
+            padding-bottom: 5px;
+        }
     }
 
     & a.active {
         text-decoration-line: underline;
         text-decoration-thickness: 2px;
         text-underline-offset: 9px;
+
+        @include phone-portrait {
+            text-decoration-thickness: 1px;
+            text-underline-offset: 5px;
+        }
     }
 }

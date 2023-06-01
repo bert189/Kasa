@@ -26,7 +26,7 @@ function AboutPage() {
     return (
         <>
             <Header />
-            <Banner image={valley} title=" "/>
+            <Banner image={valley} titleFirst=" " titleSecond=" " />
             <main className="abouts">
                 {abouts.map((about, index) => (
                     <Dropdown key={index} title={about.title} content={about.content} />

@@ -1,27 +1,53 @@
 .accomodation {
+
+    margin-top: 5px;
     
     & .infos-wrapper {
         display: flex;
 
+        @include phone-portrait {
+            display: block;
+        }
     }
 
     &__infos {
         margin-top: 30px;
-        width: 50%;        
+        width: 50%;
+        
+        @include smartphone {
+            margin-top: $card-space-tactile;
+        }
+        @include phone-portrait {
+            width: 100%;
+            margin-top: 0;
+        }
     }
 
     & .infos-1 {
         color: $color-primary;
+
+        @include phone-portrait {
+            margin-top: 15px;
+        }
         
         & h1 {
             font-size: 36px;
             font-weight: 500;
+
+            @include smartphone {
+                font-size: 24px;
+            }
+
         }
 
         & h3 {
             font-size: 18px;
             font-weight: 500;
-            margin-top: 5px;
+            margin-top: 10px;
+
+            @include smartphone {
+                font-size: 14px;
+            }
         }
 
     }
@@ -29,8 +55,13 @@
     & .infos-2 {
         display: flex;
         flex-direction: column;
-        align-items: end;
+        align-items: flex-end;
         justify-content: space-between;
+
+        @include phone-portrait {
+            flex-direction: row-reverse;
+            align-items: center;
+        }
     }
     
     &__details {
@@ -38,8 +69,34 @@
         display: flex;
         justify-content: space-between;
 
+        @include smartphone {
+            display: block;
+            margin-top: $card-space-tactile;
+        }
+
         & .dropdown {
             width: 47%;
+
+            &__title-wrapper {
+                border-radius: $card-radius;
+            }
+
+            &__content {
+                border-radius: $card-radius;
+                top: calc( -2 * $card-radius);
+
+                @include smartphone {
+                    padding: 35px 12px 10px;
+                }
+            }
+
+            @include tablet {
+                width: 48%;
+            }
+
+            @include smartphone {
+                width: 100%;
+            }
         }
     }
 

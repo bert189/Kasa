@@ -10,13 +10,16 @@ function AllAccomodations() {
     const [accomodations, setAccomodations] = useState([]);
 
     useEffect(() => {
-        fetchAllAccomodations()
-            .then(result => {
-                setAccomodations(result)
-            })
-            .catch(err => {
-                // Gérez les erreurs ici
-            });
+        async function loadData() {
+            try {
+                const result = await fetchAllAccomodations();
+                setAccomodations(result);                
+            }
+            catch (error){
+                // gérer les erreurs ici
+            }
+        }
+        loadData();
     }, [])
         
     
@@ -29,7 +32,6 @@ function AllAccomodations() {
                     image={accomodation.cover}
                     title={accomodation.title} />
             ))}
-
         </div>
     );
 }

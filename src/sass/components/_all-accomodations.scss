@@ -3,8 +3,23 @@
     margin-top: 55px;
     background-color: $lightgrey;
     border-radius: $section-radius;
-    padding: 55px 0 0 55px;
+    padding: $card-space 0 0 $card-space;
     display: flex;
     flex-wrap: wrap;
+
+    @include desktop {
+        padding: $card-space-desktop 0 0 $card-space-desktop;
+    }
+
+    @include tablet {
+        margin-top: 40px;
+        background-color: white;
+        padding: 0;
+        justify-content: space-between;
+    }
+
+    @include smartphone {
+        margin-top: 25px;
+    }
 }
 

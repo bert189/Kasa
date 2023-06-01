@@ -10,6 +10,14 @@
         object-fit: cover;
         overflow-clip-margin: unset;
         vertical-align: bottom;
+
+        @include tablet {
+            border-radius: $card-radius;
+        }
+
+        @include smartphone {
+            height: 115px;
+        }
     }
 
     & h1 {
@@ -23,9 +31,25 @@
         height: 100%;
         width: 100%;
         background-color: rgba($color: #000000, $alpha: 0.3);
-        border-radius: 25px;
-        text-align: center;
+        border-radius: $section-radius;
         padding: 0 90px;
         @include center-content;
+
+        @include tablet {
+            border-radius: $card-radius;
+            flex-direction: column;
+        }
+        
+        @include smartphone {
+            font-size: 24px;
+            letter-spacing: 0;
+            padding: 0 25px;
+            flex-direction: row;
+        }
+        
+        @include phone-portrait {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 }

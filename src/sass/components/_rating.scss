@@ -1,11 +1,19 @@
 
 .rating {
-    width: 180px;
+    width: calc(7.5 * $star-size);
     display: flex;
     justify-content: space-between;
 
+    @include smartphone {
+        width: calc(7.5 * $star-size-phone);
+    }
+
     & .star {
-        font-size: 24px;
+        font-size: $star-size;
+
+        @include smartphone {
+            font-size: $star-size-phone;
+        }
     }
 
     & .full-star {

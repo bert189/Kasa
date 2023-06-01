@@ -6,6 +6,15 @@ a {
 .App {
     padding: 0 40px;
     min-height: calc(100vh - ($footer-height + $footer-margin-top));
+
+    @include tablet {
+        padding: 0 20px;
+        min-height: calc(100vh - ($footer-height + $footer-margin-top-tablet));
+    }
+
+    @include smartphone {
+        min-height: calc(100vh - ($footer-height-smartphone + $footer-margin-top-smartphone));
+    }
 } 
 
 .container {

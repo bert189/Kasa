@@ -9,6 +9,10 @@
         font-weight: 500;
         margin-right: 12px;
 
+        @include smartphone {
+            font-size: 14px;
+        }
+
         & p {
             text-align: right;
         }
@@ -20,6 +24,11 @@
         object-fit: cover;
         overflow-clip-margin: unset;
         border-radius: 50%;
+
+        @include smartphone {
+            height: 48px;
+            width: 48px;
+        }
     }
 }
 
