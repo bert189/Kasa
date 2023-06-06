@@ -4,9 +4,7 @@ import { fetchAbouts } from "../api/api";
 
 import valley from "./../assets/valley.png";
 import Banner from "../components/Banner";
-import Header from "../components/Header";
 import Dropdown from "../components/Dropdown";
-// import Footer from "../components/Footer";
 
 
 function AboutPage() {
@@ -23,18 +21,16 @@ function AboutPage() {
             });
     }, [])
 
+    const alt = "image décorative d'une vallée montagneuse";
+
     return (
         <>
-            <Header />
-            <Banner image={valley} titleFirst=" " titleSecond=" " />
+            <Banner image={valley} titleFirst=" " titleSecond=" " alt={alt} />
             <main className="abouts">
                 {abouts.map((about, index) => (
                     <Dropdown key={index} title={about.title} content={about.content} />
                 ))}
-            </main>
-           
-            
-            {/* <Footer /> */}            
+            </main>           
         </>
     );
 }

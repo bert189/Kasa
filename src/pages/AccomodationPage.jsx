@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { fetchAllAccomodations } from "../api/api";
 import { useParams, useNavigate } from 'react-router-dom';
 
-import Header from "../components/Header";
 import Carrousel from "../components/Carrousel";
 import Tags from "../components/Tags";
 import Host from "../components/Host";
@@ -36,20 +35,20 @@ function AccomodationPage() {
             }
         }
         load();
-    }, )
+    }, [])
 
 
 
     if(accomodation) {
         const {pictures, title, location, host, tags, rating, description, equipments} = accomodation;
+        
         const fullName = host.name;
         const [firstName, lastName] = fullName.split(" ");
 
         return (
             <>
-                <Header />
-                <main className="accomodation container">
-                    <Carrousel pictures={pictures} />
+                <main className="accomodation">
+                    <Carrousel pictures={pictures} title={title} />
                     <div className="infos-wrapper">
                         <section className="accomodation__infos infos-1">
                             <h1>{title}</h1>

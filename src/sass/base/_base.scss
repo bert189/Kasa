@@ -3,12 +3,18 @@ a {
     all: unset;
 }
 
-.App {
-    padding: 0 40px;
+.container {    
     min-height: calc(100vh - ($footer-height + $footer-margin-top));
+    max-width: calc($container-max-width + (2 * $container-padding));
+    margin: 0 auto;
+    padding: 0 $container-padding;
+
+    @include desktop {
+        padding: 0 $container-padding-desktop;
+    }
 
     @include tablet {
-        padding: 0 20px;
+        padding: 0 $container-padding-tablet;
         min-height: calc(100vh - ($footer-height + $footer-margin-top-tablet));
     }
 
@@ -16,9 +22,3 @@ a {
         min-height: calc(100vh - ($footer-height-smartphone + $footer-margin-top-smartphone));
     }
 } 
-
-.container {
-    max-width: 1240px;
-    margin: 0 auto;
-
-}

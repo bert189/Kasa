@@ -1,12 +1,19 @@
 
 .not-found {
+
+    @include tablet {
+        margin-top: 9vh;
+    }
     
     & h1 {
         color: $color-primary;
         font-weight: 700;
         font-size: 290px;
         @include center-content;
-        // margin: 30px 0;
+
+        @include tablet {
+            font-size: 193px;
+        }
 
         @include smartphone {
             font-size: 96px;
@@ -20,9 +27,14 @@
         @include center-content;
         font-weight: 500;
         margin-bottom: 110px;
+        text-align: center;
+
+        @include tablet {
+            font-size: 27px;
+        }
 
         @include smartphone {
-            font-size: 18px;
+            font-size: 16px;
             margin-bottom: 8%;
         }
     }
@@ -32,6 +44,7 @@
         font-size: 18px;
         text-decoration: underline;
         @include center-content;
+        padding: 10px 0 40px;
 
         @include smartphone {
             font-size: 14px;

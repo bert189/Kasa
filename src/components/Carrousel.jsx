@@ -5,12 +5,11 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 
 
 
-function Carrousel({pictures}) {
+function Carrousel({pictures, title}) {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const currentPicture = pictures[currentIndex];
-
     
     function previous() {
         setCurrentIndex((currentIndex + pictures.length - 1) % pictures.length);
@@ -24,9 +23,11 @@ function Carrousel({pictures}) {
     const chevronRight = <FontAwesomeIcon icon={faChevronRight} className="chevron chevron-right" onClick={next} />;
     const pageIndicator = <div className="carrousel__page-indicator">{(currentIndex + 1)} / {pictures.length}</div>;
 
+    const alt = `photo numéro ${currentIndex + 1} de ${title}`;
+
     return (
         <div className="carrousel">
-            <img src={currentPicture} alt="" />
+            <img src={currentPicture} alt={alt} />
             {pictures.length === 1 ? <></> : chevronLeft}
             {pictures.length === 1 ? <></> : chevronRight}
             {pictures.length === 1 ? <></> : pageIndicator}

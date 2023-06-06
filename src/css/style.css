@@ -48,25 +48,27 @@ a {
   all: unset;
 }
 
-.App {
-  padding: 0 40px;
+.container {
   min-height: calc(100vh - 280px);
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+@media screen and (max-width: 1239px) {
+  .container {
+    padding: 0 40px;
+  }
 }
 @media screen and (max-width: 991px) {
-  .App {
+  .container {
     padding: 0 20px;
     min-height: calc(100vh - 240px);
   }
 }
 @media screen and (max-width: 767px) {
-  .App {
+  .container {
     min-height: calc(100vh - 145px);
   }
-}
-
-.container {
-  max-width: 1240px;
-  margin: 0 auto;
 }
 
 body {
@@ -591,6 +593,11 @@ body {
   margin: 35px auto;
 }
 
+@media screen and (max-width: 991px) {
+  .not-found {
+    margin-top: 9vh;
+  }
+}
 .not-found h1 {
   color: #FF6060;
   font-weight: 700;
@@ -598,6 +605,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media screen and (max-width: 991px) {
+  .not-found h1 {
+    font-size: 193px;
+  }
 }
 @media screen and (max-width: 767px) {
   .not-found h1 {
@@ -613,10 +625,16 @@ body {
   justify-content: center;
   font-weight: 500;
   margin-bottom: 110px;
+  text-align: center;
+}
+@media screen and (max-width: 991px) {
+  .not-found h2 {
+    font-size: 27px;
+  }
 }
 @media screen and (max-width: 767px) {
   .not-found h2 {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 8%;
   }
 }
@@ -627,6 +645,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px 0 40px;
 }
 @media screen and (max-width: 767px) {
   .not-found .back-home {

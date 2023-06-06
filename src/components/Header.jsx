@@ -12,7 +12,7 @@ function Header() {
     ];
 
     return (
-        <div className="header container">
+        <div className="header">
             <Link to="/"><img className="header__logo" src={logoPink} alt="logo kasa"/></Link>
             <Nav links={links} />
         </div>        

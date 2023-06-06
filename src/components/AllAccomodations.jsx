@@ -24,7 +24,7 @@ function AllAccomodations() {
         
     
     return (
-        <div className="all-accomodation container">
+        <div className="all-accomodation">
             {accomodations.map(accomodation => (
                 <AccomodationCard
                     key={accomodation.id}
