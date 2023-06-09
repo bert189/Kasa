@@ -1,8 +1,8 @@
 import React from "react";
 import './css/style.css';
+// import './sass/main.scss';
 import { RouterProvider } from "react-router-dom";
 import Router from "./Router";
-import Footer from "./components/Footer";
 
 
 function App() {

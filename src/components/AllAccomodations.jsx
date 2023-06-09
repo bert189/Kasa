@@ -16,7 +16,8 @@ function AllAccomodations() {
                 setAccomodations(result);                
             }
             catch (error){
-                // gérer les erreurs ici
+                console.error('Erreur lors de la récupération des données :', error);
+                return null;
             }
         }
         loadData();

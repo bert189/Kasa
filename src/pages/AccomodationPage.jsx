@@ -30,8 +30,9 @@ function AccomodationPage() {
                     navigate("/logement-introuvable");
                 }
             }
-            catch(err) {
-                // Gérez les erreurs ici
+            catch(error) {
+                console.error('Erreur lors de la récupération des données :', error);
+                return null;
             }
         }
         load();
@@ -52,7 +53,7 @@ function AccomodationPage() {
                     <div className="infos-wrapper">
                         <section className="accomodation__infos infos-1">
                             <h1>{title}</h1>
-                            <h3>{location}</h3>
+                            <h2>{location}</h2>
                             <Tags tags={tags} />
                         </section>
                         <section className="accomodation__infos infos-2">
@@ -62,7 +63,7 @@ function AccomodationPage() {
                     </div>
                     <section className="accomodation__details">
                         <Dropdown key="0" title="Description" content={description} />
-                        <Dropdown key="1" title="Équipements" content={<ul>{equipments.map((equipment, index) => <li key={index}>{equipment}</li>)}</ul>} />
+                        <Dropdown key="1" title="Équipements" content={equipments} />
                     </section>
                 </main>
             </>
